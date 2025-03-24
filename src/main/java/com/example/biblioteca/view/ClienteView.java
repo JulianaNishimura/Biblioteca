@@ -16,12 +16,12 @@ public class ClienteView {
     }
 
     @PostMapping
-    public String postCliente(Cliente c){
+    public String postCliente(@RequestBody Cliente c){
         return cc.postarCliente(c);
     }
 
     @PutMapping("/atualizar/{id}")
-    public String atualizarCliente(@PathVariable Long id, Cliente c){
+    public String atualizarCliente(@PathVariable Long id, @RequestBody Cliente c){
         if(cc.atualizarCliente(id,c)){
             return "Sucesso ao atualizar o cliente!";
         } else {

@@ -16,12 +16,12 @@ public class LivroView {
     }
 
     @PostMapping
-    public String postLivro(Livro l){
+    public String postLivro(@RequestBody Livro l){
         return lc.postarLivro(l);
     }
 
     @PutMapping("/atualizar/{id}")
-    public String atualizarLivro(@PathVariable Long id, Livro l){
+    public String atualizarLivro(@PathVariable Long id, @RequestBody Livro l){
         if(lc.atualizarLivro(id,l)){
             return "Sucesso ao atualizar o livro!";
         } else {

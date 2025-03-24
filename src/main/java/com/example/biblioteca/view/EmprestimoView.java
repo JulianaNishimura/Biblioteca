@@ -18,17 +18,17 @@ public class EmprestimoView {
     }
 
     @GetMapping("/{dataFim}")
-    public List<Emprestimo> getEmprestimos(@PathVariable ZonedDateTime dataFim){
+    public List<Emprestimo> getEmprestimos(@PathVariable String dataFim){
         return ec.listarEmprestimosPelaDataFinal(dataFim);
     }
 
     @PostMapping
-    public String postEmprestimo(Emprestimo e){
+    public String postEmprestimo(@RequestBody Emprestimo e){
         return ec.postarEmprestimo(e);
     }
 
     @PutMapping("/atualizar/{id}")
-    public String atualizarEmprestimo(@PathVariable Long id, Emprestimo e){
+    public String atualizarEmprestimo(@PathVariable Long id, @RequestBody Emprestimo e){
         if(ec.atualizarEmprestimo(id,e)){
             return "Sucesso ao atualizar o empréstimo!";
         } else {

@@ -13,8 +13,8 @@ import java.util.List;
 @Getter
 public class Emprestimo {
     private Long id;
-    private ZonedDateTime data_inicio;
-    private ZonedDateTime data_fim;
+    private String data_inicio;
+    private String data_fim;
     private List<Livro> livros_emprestados;
     private Cliente cliente;
 }

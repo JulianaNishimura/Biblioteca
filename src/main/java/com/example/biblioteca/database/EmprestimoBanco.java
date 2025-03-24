@@ -37,10 +37,10 @@ public class EmprestimoBanco {
         return null;
     }
 
-    public List<Emprestimo> findEmprestimosDataFinal(ZonedDateTime data_final){
+    public List<Emprestimo> findEmprestimosDataFinal(String data_final){
         List<Emprestimo> emprestimosPelaData = new ArrayList<>();
         for(Emprestimo e : emprestimos){
-            if(e.getData_fim() == data_final){
+            if(e.getData_fim().equals(data_final)){
                 emprestimosPelaData.add(e);
             }
         }

@@ -27,7 +27,7 @@ public class EmprestimoController {
         return banco.deleteEmprestimo(id);
     }
 
-    public List<Emprestimo> listarEmprestimosPelaDataFinal(ZonedDateTime dataFim) {
+    public List<Emprestimo> listarEmprestimosPelaDataFinal(String dataFim) {
         return banco.findEmprestimosDataFinal(dataFim);
     }
 }
